@@ -39,7 +39,7 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
   };
 
   if (movies.length == 0) {
-    return;
+    return <div></div>;
   }
 
   return (
