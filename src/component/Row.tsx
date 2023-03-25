@@ -37,7 +37,11 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
       : movie.backdrop_path || movie.poster_path;
     return `${base_url}${path}`;
   };
-  console.log(movies, title);
+
+  if (movies.length == 0) {
+    return;
+  }
+
   return (
     <div className="Row">
       <h2>{title}</h2>
@@ -49,9 +53,9 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
             className={`Row-poster ${isLargeRow && "Row-poster-large"}`}
             src={checkImage(movie, isLargeRow)}
             alt={movie.name}
-            onError={() => {
-              console.log("画像を取得できませんでした。", movie.name);
-            }}
+            onError={() =>
+              console.log("画像を取得できませんでした。", movie.name)
+            }
           />
         ))}
       </div>
