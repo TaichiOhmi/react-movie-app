@@ -1,10 +1,12 @@
 import "./styles/App.css";
 import { Row } from "./component/Row";
 import { requests } from "./axios/requests";
+import { Banner } from "./component/Banner";
 
 function App() {
   return (
     <div className="App">
+      <Banner />
       <Row
         title="NETFLIX ORIGUINALS"
         fetchUrl={requests.feachNetflixOriginals}
